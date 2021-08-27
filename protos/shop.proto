@@ -10,6 +10,27 @@ message PrefecturesResponse {
   repeated string name = 1;
 }
 
+message ShopsByPrefectureRequest {
+  string id = 1;
+}
+
+message ShopResponse {
+  string brand_sfid = 1;
+  string name = 2;
+  string fax = 3;
+  string tel = 4;
+  string mail = 5;
+  string store_url = 6;
+  string address = 7;
+  string store_sfid = 8;
+  string zip_code = 9;
+}
+
+message ShopsByPrefectureResponse {
+  repeated ShopResponse shops = 1;
+}
+
 service Shop {
   rpc PrefectureList(PrefecturesRequest) returns (PrefecturesResponse) {};
+  rpc ShopsByPrefectureList(ShopsByPrefectureRequest) returns (ShopsByPrefectureResponse) {};
 }

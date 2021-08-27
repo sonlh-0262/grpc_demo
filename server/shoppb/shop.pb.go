@@ -94,9 +94,193 @@ func (m *PrefecturesResponse) GetName() []string {
 	return nil
 }
 
+type ShopsByPrefectureRequest struct {
+	Id                   string   `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *ShopsByPrefectureRequest) Reset()         { *m = ShopsByPrefectureRequest{} }
+func (m *ShopsByPrefectureRequest) String() string { return proto.CompactTextString(m) }
+func (*ShopsByPrefectureRequest) ProtoMessage()    {}
+func (*ShopsByPrefectureRequest) Descriptor() ([]byte, []int) {
+	return fileDescriptor_0f3030369b20fd61, []int{2}
+}
+
+func (m *ShopsByPrefectureRequest) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_ShopsByPrefectureRequest.Unmarshal(m, b)
+}
+func (m *ShopsByPrefectureRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_ShopsByPrefectureRequest.Marshal(b, m, deterministic)
+}
+func (m *ShopsByPrefectureRequest) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_ShopsByPrefectureRequest.Merge(m, src)
+}
+func (m *ShopsByPrefectureRequest) XXX_Size() int {
+	return xxx_messageInfo_ShopsByPrefectureRequest.Size(m)
+}
+func (m *ShopsByPrefectureRequest) XXX_DiscardUnknown() {
+	xxx_messageInfo_ShopsByPrefectureRequest.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_ShopsByPrefectureRequest proto.InternalMessageInfo
+
+func (m *ShopsByPrefectureRequest) GetId() string {
+	if m != nil {
+		return m.Id
+	}
+	return ""
+}
+
+type ShopResponse struct {
+	BrandSfid            string   `protobuf:"bytes,1,opt,name=brand_sfid,json=brandSfid,proto3" json:"brand_sfid,omitempty"`
+	Name                 string   `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
+	Fax                  string   `protobuf:"bytes,3,opt,name=fax,proto3" json:"fax,omitempty"`
+	Tel                  string   `protobuf:"bytes,4,opt,name=tel,proto3" json:"tel,omitempty"`
+	Mail                 string   `protobuf:"bytes,5,opt,name=mail,proto3" json:"mail,omitempty"`
+	StoreUrl             string   `protobuf:"bytes,6,opt,name=store_url,json=storeUrl,proto3" json:"store_url,omitempty"`
+	Address              string   `protobuf:"bytes,7,opt,name=address,proto3" json:"address,omitempty"`
+	StoreSfid            string   `protobuf:"bytes,8,opt,name=store_sfid,json=storeSfid,proto3" json:"store_sfid,omitempty"`
+	ZipCode              string   `protobuf:"bytes,9,opt,name=zip_code,json=zipCode,proto3" json:"zip_code,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *ShopResponse) Reset()         { *m = ShopResponse{} }
+func (m *ShopResponse) String() string { return proto.CompactTextString(m) }
+func (*ShopResponse) ProtoMessage()    {}
+func (*ShopResponse) Descriptor() ([]byte, []int) {
+	return fileDescriptor_0f3030369b20fd61, []int{3}
+}
+
+func (m *ShopResponse) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_ShopResponse.Unmarshal(m, b)
+}
+func (m *ShopResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_ShopResponse.Marshal(b, m, deterministic)
+}
+func (m *ShopResponse) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_ShopResponse.Merge(m, src)
+}
+func (m *ShopResponse) XXX_Size() int {
+	return xxx_messageInfo_ShopResponse.Size(m)
+}
+func (m *ShopResponse) XXX_DiscardUnknown() {
+	xxx_messageInfo_ShopResponse.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_ShopResponse proto.InternalMessageInfo
+
+func (m *ShopResponse) GetBrandSfid() string {
+	if m != nil {
+		return m.BrandSfid
+	}
+	return ""
+}
+
+func (m *ShopResponse) GetName() string {
+	if m != nil {
+		return m.Name
+	}
+	return ""
+}
+
+func (m *ShopResponse) GetFax() string {
+	if m != nil {
+		return m.Fax
+	}
+	return ""
+}
+
+func (m *ShopResponse) GetTel() string {
+	if m != nil {
+		return m.Tel
+	}
+	return ""
+}
+
+func (m *ShopResponse) GetMail() string {
+	if m != nil {
+		return m.Mail
+	}
+	return ""
+}
+
+func (m *ShopResponse) GetStoreUrl() string {
+	if m != nil {
+		return m.StoreUrl
+	}
+	return ""
+}
+
+func (m *ShopResponse) GetAddress() string {
+	if m != nil {
+		return m.Address
+	}
+	return ""
+}
+
+func (m *ShopResponse) GetStoreSfid() string {
+	if m != nil {
+		return m.StoreSfid
+	}
+	return ""
+}
+
+func (m *ShopResponse) GetZipCode() string {
+	if m != nil {
+		return m.ZipCode
+	}
+	return ""
+}
+
+type ShopsByPrefectureResponse struct {
+	Shops                []*ShopResponse `protobuf:"bytes,1,rep,name=shops,proto3" json:"shops,omitempty"`
+	XXX_NoUnkeyedLiteral struct{}        `json:"-"`
+	XXX_unrecognized     []byte          `json:"-"`
+	XXX_sizecache        int32           `json:"-"`
+}
+
+func (m *ShopsByPrefectureResponse) Reset()         { *m = ShopsByPrefectureResponse{} }
+func (m *ShopsByPrefectureResponse) String() string { return proto.CompactTextString(m) }
+func (*ShopsByPrefectureResponse) ProtoMessage()    {}
+func (*ShopsByPrefectureResponse) Descriptor() ([]byte, []int) {
+	return fileDescriptor_0f3030369b20fd61, []int{4}
+}
+
+func (m *ShopsByPrefectureResponse) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_ShopsByPrefectureResponse.Unmarshal(m, b)
+}
+func (m *ShopsByPrefectureResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_ShopsByPrefectureResponse.Marshal(b, m, deterministic)
+}
+func (m *ShopsByPrefectureResponse) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_ShopsByPrefectureResponse.Merge(m, src)
+}
+func (m *ShopsByPrefectureResponse) XXX_Size() int {
+	return xxx_messageInfo_ShopsByPrefectureResponse.Size(m)
+}
+func (m *ShopsByPrefectureResponse) XXX_DiscardUnknown() {
+	xxx_messageInfo_ShopsByPrefectureResponse.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_ShopsByPrefectureResponse proto.InternalMessageInfo
+
+func (m *ShopsByPrefectureResponse) GetShops() []*ShopResponse {
+	if m != nil {
+		return m.Shops
+	}
+	return nil
+}
+
 func init() {
 	proto.RegisterType((*PrefecturesRequest)(nil), "shops.PrefecturesRequest")
 	proto.RegisterType((*PrefecturesResponse)(nil), "shops.PrefecturesResponse")
+	proto.RegisterType((*ShopsByPrefectureRequest)(nil), "shops.ShopsByPrefectureRequest")
+	proto.RegisterType((*ShopResponse)(nil), "shops.ShopResponse")
+	proto.RegisterType((*ShopsByPrefectureResponse)(nil), "shops.ShopsByPrefectureResponse")
 }
 
 func init() {
@@ -104,16 +288,29 @@ func init() {
 }
 
 var fileDescriptor_0f3030369b20fd61 = []byte{
-	// 139 bytes of a gzipped FileDescriptorProto
-	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0xe2, 0xe2, 0x2a, 0xce, 0xc8, 0x2f,
-	0xd0, 0x2b, 0x28, 0xca, 0x2f, 0xc9, 0x17, 0x62, 0x05, 0xb1, 0x8b, 0x95, 0x44, 0xb8, 0x84, 0x02,
-	0x8a, 0x52, 0xd3, 0x52, 0x93, 0x4b, 0x4a, 0x8b, 0x52, 0x8b, 0x83, 0x52, 0x0b, 0x4b, 0x53, 0x8b,
-	0x4b, 0x94, 0x34, 0xb9, 0x84, 0x51, 0x44, 0x8b, 0x0b, 0xf2, 0xf3, 0x8a, 0x53, 0x85, 0x84, 0xb8,
-	0x58, 0xf2, 0x12, 0x73, 0x53, 0x25, 0x18, 0x15, 0x98, 0x35, 0x38, 0x83, 0xc0, 0x6c, 0xa3, 0x40,
-	0x2e, 0x96, 0xe0, 0x8c, 0xfc, 0x02, 0x21, 0x4f, 0x2e, 0x3e, 0x84, 0x16, 0x9f, 0xcc, 0xe2, 0x12,
-	0x21, 0x49, 0x3d, 0xb0, 0x15, 0x7a, 0x98, 0xe6, 0x4b, 0x49, 0x61, 0x93, 0x82, 0x58, 0xa2, 0xc4,
-	0xe0, 0xc4, 0x11, 0xc5, 0x06, 0x92, 0x2e, 0x48, 0x4a, 0x62, 0x03, 0xbb, 0xd5, 0x18, 0x10, 0x00,
-	0x00, 0xff, 0xff, 0x3f, 0x5d, 0xa9, 0x5e, 0xb9, 0x00, 0x00, 0x00,
+	// 341 bytes of a gzipped FileDescriptorProto
+	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0x74, 0x52, 0x5d, 0x4b, 0xc3, 0x30,
+	0x14, 0xb5, 0xfb, 0x6c, 0xaf, 0x32, 0x24, 0x53, 0xc8, 0x26, 0xe2, 0xe8, 0xd3, 0xe6, 0xc3, 0x1e,
+	0xe6, 0x3f, 0x98, 0x20, 0x08, 0x3e, 0x48, 0x87, 0x2f, 0x22, 0x8c, 0x6e, 0xb9, 0xc5, 0x40, 0xb7,
+	0xd4, 0x24, 0x03, 0xdd, 0x9f, 0xf2, 0x7f, 0xf9, 0x2b, 0x24, 0x37, 0xfb, 0x92, 0xd5, 0xb7, 0x93,
+	0x73, 0xcf, 0x39, 0x3d, 0xbd, 0x09, 0x80, 0x79, 0x57, 0xc5, 0xb0, 0xd0, 0xca, 0x2a, 0x56, 0x77,
+	0xd8, 0xc4, 0x17, 0xc0, 0x9e, 0x35, 0x66, 0x38, 0xb7, 0x2b, 0x8d, 0x26, 0xc1, 0x8f, 0x15, 0x1a,
+	0x1b, 0x0f, 0xa0, 0xfd, 0x87, 0x35, 0x85, 0x5a, 0x1a, 0x64, 0x0c, 0x6a, 0xcb, 0x74, 0x81, 0x3c,
+	0xe8, 0x55, 0xfb, 0x51, 0x42, 0x38, 0xbe, 0x05, 0x3e, 0x71, 0x49, 0xe3, 0xaf, 0xbd, 0x63, 0x13,
+	0xc3, 0x5a, 0x50, 0x91, 0x82, 0x07, 0xbd, 0xa0, 0x1f, 0x25, 0x15, 0x29, 0xe2, 0x9f, 0x00, 0xce,
+	0x9c, 0x78, 0x17, 0x78, 0x0d, 0x30, 0xd3, 0xe9, 0x52, 0x4c, 0x4d, 0xb6, 0x13, 0x46, 0xc4, 0x4c,
+	0x32, 0x29, 0x76, 0xdf, 0xab, 0xd0, 0x80, 0x30, 0x3b, 0x87, 0x6a, 0x96, 0x7e, 0xf2, 0x2a, 0x51,
+	0x0e, 0x3a, 0xc6, 0x62, 0xce, 0x6b, 0x9e, 0xb1, 0x98, 0x3b, 0xdf, 0x22, 0x95, 0x39, 0xaf, 0x7b,
+	0x9f, 0xc3, 0xec, 0x0a, 0x22, 0x63, 0x95, 0xc6, 0xe9, 0x4a, 0xe7, 0xbc, 0x41, 0x83, 0x90, 0x88,
+	0x17, 0x9d, 0x33, 0x0e, 0xcd, 0x54, 0x08, 0x8d, 0xc6, 0xf0, 0x26, 0x8d, 0xb6, 0x47, 0xd7, 0xd0,
+	0xdb, 0xa8, 0x61, 0xe8, 0x1b, 0x12, 0x43, 0x0d, 0x3b, 0x10, 0xae, 0x65, 0x31, 0x9d, 0x2b, 0x81,
+	0x3c, 0xf2, 0xce, 0xb5, 0x2c, 0xee, 0x95, 0xc0, 0xf8, 0x01, 0x3a, 0x25, 0x8b, 0xd9, 0xfc, 0xf8,
+	0x00, 0xfc, 0xfe, 0x69, 0x95, 0xa7, 0xa3, 0xf6, 0x90, 0x4e, 0xc3, 0xc3, 0xe5, 0x24, 0x5e, 0x31,
+	0xfa, 0x0e, 0xa0, 0xe6, 0x78, 0xf6, 0x08, 0xad, 0x7d, 0xd2, 0x93, 0x34, 0x96, 0x75, 0x36, 0xb6,
+	0xe3, 0x1b, 0xec, 0x76, 0xcb, 0x46, 0x3e, 0x38, 0x3e, 0x61, 0x6f, 0x70, 0x79, 0xd4, 0x8d, 0x12,
+	0x6f, 0x0e, 0x8a, 0x94, 0x5d, 0x69, 0xb7, 0xf7, 0xbf, 0x60, 0x9b, 0x3e, 0x0e, 0x5f, 0x1b, 0x4e,
+	0x54, 0xcc, 0x66, 0x0d, 0x7a, 0x6b, 0x77, 0xbf, 0x01, 0x00, 0x00, 0xff, 0xff, 0x72, 0xc3, 0xa7,
+	0x4a, 0x79, 0x02, 0x00, 0x00,
 }
 
 // Reference imports to suppress errors if they are not otherwise used.
@@ -129,6 +326,7 @@ const _ = grpc.SupportPackageIsVersion6
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://godoc.org/google.golang.org/grpc#ClientConn.NewStream.
 type ShopClient interface {
 	PrefectureList(ctx context.Context, in *PrefecturesRequest, opts ...grpc.CallOption) (*PrefecturesResponse, error)
+	ShopsByPrefectureList(ctx context.Context, in *ShopsByPrefectureRequest, opts ...grpc.CallOption) (*ShopsByPrefectureResponse, error)
 }
 
 type shopClient struct {
@@ -148,9 +346,19 @@ func (c *shopClient) PrefectureList(ctx context.Context, in *PrefecturesRequest,
 	return out, nil
 }
 
+func (c *shopClient) ShopsByPrefectureList(ctx context.Context, in *ShopsByPrefectureRequest, opts ...grpc.CallOption) (*ShopsByPrefectureResponse, error) {
+	out := new(ShopsByPrefectureResponse)
+	err := c.cc.Invoke(ctx, "/shops.Shop/ShopsByPrefectureList", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // ShopServer is the server API for Shop service.
 type ShopServer interface {
 	PrefectureList(context.Context, *PrefecturesRequest) (*PrefecturesResponse, error)
+	ShopsByPrefectureList(context.Context, *ShopsByPrefectureRequest) (*ShopsByPrefectureResponse, error)
 }
 
 // UnimplementedShopServer can be embedded to have forward compatible implementations.
@@ -159,6 +367,9 @@ type UnimplementedShopServer struct {
 
 func (*UnimplementedShopServer) PrefectureList(ctx context.Context, req *PrefecturesRequest) (*PrefecturesResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method PrefectureList not implemented")
+}
+func (*UnimplementedShopServer) ShopsByPrefectureList(ctx context.Context, req *ShopsByPrefectureRequest) (*ShopsByPrefectureResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ShopsByPrefectureList not implemented")
 }
 
 func RegisterShopServer(s *grpc.Server, srv ShopServer) {
@@ -183,6 +394,24 @@ func _Shop_PrefectureList_Handler(srv interface{}, ctx context.Context, dec func
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Shop_ShopsByPrefectureList_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ShopsByPrefectureRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ShopServer).ShopsByPrefectureList(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/shops.Shop/ShopsByPrefectureList",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ShopServer).ShopsByPrefectureList(ctx, req.(*ShopsByPrefectureRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 var _Shop_serviceDesc = grpc.ServiceDesc{
 	ServiceName: "shops.Shop",
 	HandlerType: (*ShopServer)(nil),
@@ -190,6 +419,10 @@ var _Shop_serviceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "PrefectureList",
 			Handler:    _Shop_PrefectureList_Handler,
+		},
+		{
+			MethodName: "ShopsByPrefectureList",
+			Handler:    _Shop_ShopsByPrefectureList_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

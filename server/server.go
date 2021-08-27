@@ -21,6 +21,12 @@ func (s *server) PrefectureList(ctx context.Context, req *shoppb.PrefecturesRequ
 	return &shoppb.PrefecturesResponse{Name: prefecture.Data}, nil
 }
 
+func (s *server) ShopsByPrefectureList(ctx context.Context, req *shoppb.ShopsByPrefectureRequest) (*shoppb.ShopsByPrefectureResponse, error) {
+	shops := s.Prefecture.RequestShopAPI(req.Id)
+
+	return &shoppb.ShopsByPrefectureResponse{Shops: shops}, nil
+}
+
 var (
 	port int = 8080
 )
