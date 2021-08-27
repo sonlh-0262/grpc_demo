@@ -1,0 +1,15 @@
+syntax = "proto3";
+package shops;
+option go_package="shoppb";
+
+message PrefecturesRequest {
+
+}
+
+message PrefecturesResponse {
+  repeated string name = 1;
+}
+
+service Shop {
+  rpc PrefectureList(PrefecturesRequest) returns (PrefecturesResponse) {};
+}
