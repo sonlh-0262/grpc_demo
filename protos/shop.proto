@@ -30,7 +30,26 @@ message ShopsByPrefectureResponse {
   repeated ShopResponse shops = 1;
 }
 
+message CalendarsRequest {
+  string store_sfid = 1;
+  string start_time = 2;
+}
+
+message DateData {
+  int32 year = 1;
+  int32 month = 2;
+  int32 mday = 3;
+  int32 weekday = 4;
+  string j_weekday = 5;
+  map<string, int32> reservation_time = 6;
+}
+
+message CalendarsResponse {
+  repeated DateData dates = 1;
+}
+
 service Shop {
   rpc PrefectureList(PrefecturesRequest) returns (PrefecturesResponse) {};
   rpc ShopsByPrefectureList(ShopsByPrefectureRequest) returns (ShopsByPrefectureResponse) {};
+  rpc CalendarsList(CalendarsRequest) returns (CalendarsResponse) {};
 }

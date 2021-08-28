@@ -6,13 +6,15 @@ import (
 	"log"
 	"net"
 
-	prefecture "github.com/sonlh-0262/go_homework/server/prefectures"
 	"github.com/sonlh-0262/go_homework/server/shoppb"
+	"github.com/sonlh-0262/go_homework/server/shops"
 	"google.golang.org/grpc"
 )
 
 type server struct {
-	Prefecture *prefecture.Prefecture
+	Prefecture *shops.Prefecture
+	Shop       *shops.Shop
+	Calendar   *shops.Calendar
 }
 
 func (s *server) PrefectureList(ctx context.Context, req *shoppb.PrefecturesRequest) (*shoppb.PrefecturesResponse, error) {
@@ -22,9 +24,15 @@ func (s *server) PrefectureList(ctx context.Context, req *shoppb.PrefecturesRequ
 }
 
 func (s *server) ShopsByPrefectureList(ctx context.Context, req *shoppb.ShopsByPrefectureRequest) (*shoppb.ShopsByPrefectureResponse, error) {
-	shops := s.Prefecture.RequestShopAPI(req.Id)
+	shops := s.Shop.RequestShopAPI(req.Id)
 
 	return &shoppb.ShopsByPrefectureResponse{Shops: shops}, nil
+}
+
+func (s *server) CalendarsList(ctx context.Context, req *shoppb.CalendarsRequest) (*shoppb.CalendarsResponse, error) {
+	calendars := s.Calendar.RequestCalendarAPI(req.StoreSfid, req.StartTime)
+
+	return &shoppb.CalendarsResponse{Dates: calendars}, nil
 }
 
 var (

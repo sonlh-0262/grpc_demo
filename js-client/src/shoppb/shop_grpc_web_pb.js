@@ -230,5 +230,85 @@ proto.shops.ShopPromiseClient.prototype.shopsByPrefectureList =
 };
 
 
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.shops.CalendarsRequest,
+ *   !proto.shops.CalendarsResponse>}
+ */
+const methodDescriptor_Shop_CalendarsList = new grpc.web.MethodDescriptor(
+  '/shops.Shop/CalendarsList',
+  grpc.web.MethodType.UNARY,
+  proto.shops.CalendarsRequest,
+  proto.shops.CalendarsResponse,
+  /**
+   * @param {!proto.shops.CalendarsRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.shops.CalendarsResponse.deserializeBinary
+);
+
+
+/**
+ * @const
+ * @type {!grpc.web.AbstractClientBase.MethodInfo<
+ *   !proto.shops.CalendarsRequest,
+ *   !proto.shops.CalendarsResponse>}
+ */
+const methodInfo_Shop_CalendarsList = new grpc.web.AbstractClientBase.MethodInfo(
+  proto.shops.CalendarsResponse,
+  /**
+   * @param {!proto.shops.CalendarsRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.shops.CalendarsResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.shops.CalendarsRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.Error, ?proto.shops.CalendarsResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.shops.CalendarsResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.shops.ShopClient.prototype.calendarsList =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/shops.Shop/CalendarsList',
+      request,
+      metadata || {},
+      methodDescriptor_Shop_CalendarsList,
+      callback);
+};
+
+
+/**
+ * @param {!proto.shops.CalendarsRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.shops.CalendarsResponse>}
+ *     Promise that resolves to the response
+ */
+proto.shops.ShopPromiseClient.prototype.calendarsList =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/shops.Shop/CalendarsList',
+      request,
+      metadata || {},
+      methodDescriptor_Shop_CalendarsList);
+};
+
+
 module.exports = proto.shops;
 

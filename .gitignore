@@ -21,3 +21,5 @@
 /js-client/npm-debug.log*
 /js-client/yarn-debug.log*
 /js-client/yarn-error.log*
+server/tmp/*
+
