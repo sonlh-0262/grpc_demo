@@ -30,3 +30,17 @@ cd js-client
 npm install
 npm start
 ```
+
+## Notes:
+
+Generate protobuf:
+
+```
+cd protos
+
+# Gen for Go file
+protoc shop.proto --go_out=plugins=grpc:./../server/shoppb
+
+# Gen for JS file
+protoc shop.proto --js_out=import_style=commonjs,binary:./../js-client/src/shoppb --grpc-web_out=import_style=commonjs,mode=grpcwebtext:./../js-client/src/shoppb
+```
